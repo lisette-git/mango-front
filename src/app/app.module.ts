@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from'@angular/common/http';
+import { TheGreatService } from './services/thegreat.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,7 @@ import { PrimelistComponent } from './components/primelist/primelist.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [TheGreatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
