@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TheGreatService } from '../../services/thegreat.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-reversal',
@@ -13,24 +14,25 @@ export class ReversalComponent implements OnInit {
   constructor(private service: TheGreatService) { }
 
   ngOnInit() {
+
   }
 
-clickMessage = '';
-text = '';
 
+text = '';
+result = '';
 
 
     onClickMe() {
 
     this.text = (<HTMLInputElement>document.getElementById("txtin1")).value;
-    this.clickMessage = "my hero!  you pressed the button";
-    this.service.postGame();
-//     service.postGame();
-    }
 
-//     getbobo(): void {
-//     this.appService.postedGeneral();
-//     }
+      this.service.reversalString(this.text)
+      .subscribe((response: string) =>  this.result = response);
+
+      
+    }
+ 
+      
 
 
 };
