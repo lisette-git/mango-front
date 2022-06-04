@@ -23,8 +23,12 @@ result = '';
     this.text1 = (<HTMLInputElement>document.getElementById("txtin1")).value;
     this.text2 = (<HTMLInputElement>document.getElementById("txtin2")).value;
 
+    if(this.text1 && this.text2){
       this.service.anagramcheck(this.text1,this.text2)
       .subscribe((response) =>  this.result = response?"true":"false");
+    } else {
+      this.result = '';
+    }
 
       
     }

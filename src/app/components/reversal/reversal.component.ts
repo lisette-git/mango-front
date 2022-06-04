@@ -26,9 +26,12 @@ result = '';
 
     this.text = (<HTMLInputElement>document.getElementById("txtin1")).value;
 
+    if(this.text){
       this.service.reversalString(this.text)
       .subscribe((response: string) =>  this.result = response);
-
+    } else {
+      this.result = '';
+    }
       
     }
  

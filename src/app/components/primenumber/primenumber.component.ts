@@ -22,9 +22,12 @@ export class PrimenumberComponent implements OnInit {
 
     this.numb = (<HTMLInputElement>document.getElementById("numin")).value;
 
-      const soso = this.service.primecheck(this.numb)
+    if(this.numb){
+      this.service.primecheck(this.numb)
       .subscribe((response: any) =>  this.primeresult = response.toString());
-      
+    } else {
+      this.primeresult = '';
+    }
 
       
     }
