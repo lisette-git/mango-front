@@ -17,13 +17,13 @@ return this.http.post("http://localhost:8081/game/reversal/",text,{responseType:
 
 
 primecheck(nummie): Observable<Object> {
-  // let headers = new HttpHeaders().append('in', nummie);
-  // headers.append('responseType','text');
-  // const headers= new HttpHeaders()
-  // .set('in',nummie.toString());
   return this.http.post("http://localhost:8081/game/prime-number-check/",'',{headers: new HttpHeaders({ 'in2': nummie , 'responseType' : 'text' })});
   };
 
+  
+  anagramcheck(in1,in2): Observable<object> {
+    return this.http.post("http://localhost:8081/game/anagram/",'',{headers: new HttpHeaders({ 'in1': in1, 'in2' : in2 , 'responseType' : 'text' })});
+    };
 
 
 

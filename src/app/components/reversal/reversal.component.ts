@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TheGreatService } from '../../services/thegreat.service';
-import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-reversal',
