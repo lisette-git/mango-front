@@ -14,20 +14,25 @@ export class PrimenumberComponent implements OnInit {
   ngOnInit() {
   }
 
-  numb = '';
+  input;
+  numb: number;
   primeresult = '';
 
 
     clickPrimeCheck() {
 
-    this.numb = (<HTMLInputElement>document.getElementById("numin")).value;
+    this.input = (<HTMLInputElement>document.getElementById("numin")).value;
 
-    if(this.numb){
+    
+  if(Number(this.input)){
+      this.numb = this.input
+
       this.service.primecheck(this.numb)
       .subscribe((response: any) =>  this.primeresult = response.toString());
-    } else {
-      this.primeresult = '';
-    }
+    
+  } else {
+    this.primeresult = '';
+  }
 
       
     }
